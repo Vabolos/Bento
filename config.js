@@ -78,14 +78,14 @@ const CONFIG = {
 		{
 			id: '5',
 			name: 'Reddit',
-			icon: 'glasses',
+			icon: 'reddit',
 			link: 'https://reddit.com',
 		},
 		{
 			id: '6',
-			name: 'Odysee',
+			name: 'Youtube',
 			icon: 'youtube',
-			link: 'https://odysee.com/',
+			link: 'https://youtube.com/',
 		},
 	],
 
