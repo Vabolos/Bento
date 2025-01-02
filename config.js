@@ -66,7 +66,7 @@ const CONFIG = {
 		{
 			id: '3',
 			name: 'Generator',
-			icon: 'tree',
+			icon: 'trello',
 			link: 'https://woochanleee.github.io/project-tree-generator/',
 		},
 		{
