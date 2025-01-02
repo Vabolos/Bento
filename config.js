@@ -14,7 +14,7 @@ const CONFIG = {
 	name: 'Luc',
 	imageBackground: false,
 	openInNewTab: true,
-	twelveHourFormat: true,
+	twelveHourFormat: false,
 
 	// Greetings
 	greetingMorning: 'Good morning!',
@@ -28,10 +28,10 @@ const CONFIG = {
 	// Weather
 	weatherKey: 'dfb0b5761b4c9afd1659fb7316357be8', // Write here your API Key
 	weatherIcons: 'OneDark', // 'Onedark', 'Nord', 'Dark', 'White'
-	weatherUnit: 'F', // 'F', 'C'
+	weatherUnit: 'C', // 'F', 'C'
 	language: 'en', // More languages in https://openweathermap.org/current#multi
 
-	trackLocation: false, // If false or an error occurs, the app will use the lat/lon below
+	trackLocation: true, // If false or an error occurs, the app will use the lat/lon below
 	defaultLatitude: '51.504221',
 	defaultLongitude: '5.369565',
 
