@@ -1,363 +1,230 @@
-/* 
 // ╔╗ ╔═╗╔╗╔╔╦╗╔═╗
 // ╠╩╗║╣ ║║║ ║ ║ ║
-// ╚═╝╚═╝╝╚╝ ╩ ╚═╝ 
-*/
+// ╚═╝╚═╝╝╚╝ ╩ ╚═╝
+// ┌─┐┌─┐┌┐┌┌─┐┬┌─┐┬ ┬┬─┐┌─┐┌┬┐┬┌─┐┌┐┌
+// │  │ ││││├┤ ││ ┬│ │├┬┘├─┤ │ ││ ││││
+// └─┘└─┘┘└┘└  ┴└─┘└─┘┴└─┴ ┴ ┴ ┴└─┘┘└┘
 
-/* V A R I A B L E S */
+const CONFIG = {
+	// ┌┐ ┌─┐┌─┐┬┌─┐┌─┐
+	// ├┴┐├─┤└─┐││  └─┐
+	// └─┘┴ ┴└─┘┴└─┘└─┘
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap'); /* Font Import */
+	// General
+	name: 'Luc',
+	imageBackground: false,
+	openInNewTab: true,
+	twelveHourFormat: true,
 
-:root {
-  /* Font Size */
-  --fg-primary: 12vh; /* Time and Greetings */
-  --fg-secondary: 3vh; /* Greetings and Weather widger */
-  --fg-date: 8vh; /* Date */
-  --fg-list: 2vh; /* Links List */
-  --icon: 3vh; /* Icon Size */
+	// Greetings
+	greetingMorning: 'Good morning!',
+	greetingAfternoon: 'Good afternoon,',
+	greetingEvening: 'Good evening,',
+	greetingNight: 'Go to Sleep!',
 
-  /* Fonts Color */
-  --fg: #d3c6aa; /* Foreground color */
-  --sfg: #a7c080; /* Sceondary Foreground color */
+	// Layout
+	bentoLayout: 'lists', // 'bento', 'lists', 'buttons'
 
-  /* Light Colors  */
-  --accent: #57a0d9; /* Hover color */
-  --background: #f5f5f5; /* Background color */
-  --cards: #e4e6e6; /* Cards color */
+	// Weather
+	weatherKey: '69fde5a4383272f5c5b218021a150dcc', // Write here your API Key
+	weatherIcons: 'OneDark', // 'Onedark', 'Nord', 'Dark', 'White'
+	weatherUnit: 'F', // 'F', 'C'
+	language: 'en', // More languages in https://openweathermap.org/current#multi
 
-  /* Image background  */
-  --imgbg: url(assets/background.jpg); /* Image URL */
-  --imgcol: linear-gradient(
-    rgba(255, 255, 255, 0.7),
-    rgba(255, 255, 255, 0.7)
-  ); /* Filter color */
-}
+	trackLocation: false, // If false or an error occurs, the app will use the lat/lon below
+	defaultLatitude: '40.039398',
+	defaultLongitude: '-76.307083',
 
-.darktheme {
-  /* Dark Colors  */
-  --accent: #83c092; /* Hover color */
-  --background: #232a2e; /* Background color */
-  --cards: #2d353b; /* Cards color */
+	// Autochange
+	autoChangeTheme: true,
 
-  /* Fonts Color */
-  --fg: #d3c6aa; /* Foreground color */
-  --sfg: #2d353b; /* Secondary Foreground color */
+	// Autochange by OS
+	changeThemeByOS: true,
 
-  /* Image background  */
-  --imgcol: linear-gradient(
-    rgba(0, 0, 0, 0.85),
-    rgba(0, 0, 0, 0.85)
-  ); /* Filter color */
-}
+	// Autochange by hour options (24hrs format, string must be in: hh:mm)
+	changeThemeByHour: false,
+	hourDarkThemeActive: '18:30',
+	hourDarkThemeInactive: '07:00',
 
-/* S T Y L E S */
+	// ┌┐ ┬ ┬┌┬┐┌┬┐┌─┐┌┐┌┌─┐
+	// ├┴┐│ │ │  │ │ ││││└─┐
+	// └─┘└─┘ ┴  ┴ └─┘┘└┘└─┘
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Open Sans', sans-serif;
-  transition: 0.2s ease-in-out;
-}
+	firstButtonsContainer: [
+		{
+			id: '1',
+			name: 'Gmail',
+			icon: 'mail',
+			link: 'https://mail.google.com/mail/u/0/#inbox',
+		},
+		{
+			id: '2',
+			name: 'Keep',
+			icon: 'list-todo',
+			link: 'https://keep.google.com/u/1/',
+		},
+		{
+			id: '3',
+			name: 'Indeed',
+			icon: 'glasses',
+			link: 'https://www.indeed.com/',
+		},
+		{
+			id: '4',
+			name: 'ESPN',
+			icon: 'trophy',
+			link: 'https://www.espn.com/',
+		},
+		{
+			id: '5',
+			name: 'SoFi',
+			icon: 'piggy-bank',
+			link: 'https://www.sofi.com/',
+		},
+		{
+			id: '6',
+			name: 'YouTube',
+			icon: 'youtube',
+			link: 'https://www.youtube.com',
+		},
+	],
 
-body {
-  width: 100vw;
-  height: 100vh;
-  background-color: var(--background);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+	secondButtonsContainer: [
+		{
+			id: '1',
+			name: 'Music',
+			icon: 'headphones',
+			link: 'https://open.spotify.com',
+		},
+		{
+			id: '2',
+			name: 'twitter',
+			icon: 'twitter',
+			link: 'https://twitter.com/',
+		},
+		{
+			id: '3',
+			name: 'bot',
+			icon: 'bot',
+			link: 'https://discord.com/app',
+		},
+		{
+			id: '4',
+			name: 'Amazon',
+			icon: 'shopping-bag',
+			link: 'https://amazon.com/',
+		},
+		{
+			id: '5',
+			name: 'Hashnode',
+			icon: 'pen-tool',
+			link: 'https://hashnode.com/',
+		},
+		{
+			id: '6',
+			name: 'Figma',
+			icon: 'figma',
+			link: 'https://figma.com/',
+		},
+	],
 
-.notransition {
-  -webkit-transition: none;
-  -moz-transition: none;
-  -o-transition: none;
-  transition: none;
-}
+	// ┬  ┬┌─┐┌┬┐┌─┐
+	// │  │└─┐ │ └─┐
+	// ┴─┘┴└─┘ ┴ └─┘
 
-.withImageBackground {
-  background-image: var(--imgcol), var(--imgbg);
-  background-size: cover;
-}
+	// First Links Container
+	firstlistsContainer: [
+		{
+			icon: 'dices',
+			id: '1',
+			links: [
+				{
+					name: 'PokeDoku',
+					link: 'https://pokedoku.com/',
+				},
+				{
+					name: 'Daily Dozen',
+					link: 'https://dailydozentrivia.com/',
+				},
+				{
+					name: 'Connections',
+					link: 'https://www.nytimes.com/games/connections',
+				},
+				{
+					name: 'Crossword',
+					link: 'https://www.washingtonpost.com/crossword-puzzles/daily/',
+				},
+			],
+		},
+		{
+			icon: 'cake-slice',
+			id: '2',
+			links: [
+				{
+					name: 'Reddit',
+					link: 'https://www.reddit.com/',
+				},
+				{
+					name: 'Lemmy',
+					link: 'https://lemm.ee/',
+				},
+				{
+					name: 'Bluesky',
+					link: 'https://bsky.app/',
+				},
+				{
+					name: 'GolfWRX',
+					link: 'https://forums.golfwrx.com/forum/12-equipment/?_fromLogin=1',
+				},
+			],
+		},
+	],
 
-#themeButton {
-  position: absolute;
-  margin: 2em 2em 0 0;
-  right: 0;
-  top: 0;
-  color: var(--fg);
-  border: none;
-  cursor: pointer;
-  background-color: #00000000;
-}
-
-#themeIcon {
-  width: 25px;
-  height: 25px;
-}
-
-.container {
-  width: 145vh;
-  height: 85vh;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  grid-gap: 30px;
-  padding: 20px;
-}
-
-.card {
-  background-color: var(--cards);
-  box-shadow: 0 5px 7px rgba(0, 0, 0, 0.35);
-  border-radius: 5px;
-}
-
-.card:hover {
-  transform: translateY(-0.2rem);
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.35);
-}
-
-.timeBlock {
-  grid-row: 1 / span 2;
-  grid-column: 1 / span 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.weatherBlock {
-  grid-column: 3 / span 2;
-  grid-row: 1 / span 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.date {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 30px;
-}
-
-.weather {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.clock {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#hour,
-#separator,
-#minutes {
-  font-size: var(--fg-primary);
-  font-weight: bolder;
-  color: var(--fg);
-}
-
-#month,
-#day {
-  font-size: var(--fg-date);
-  font-weight: bold;
-  color: var(--fg);
-}
-
-#day {
-  margin-left: 1.5rem;
-}
-
-#greetings {
-  font-size: var(--fg-secondary);
-  color: var(--fg);
-}
-
-.weatherIcon img {
-  width: 70px;
-  height: 70px;
-}
-
-.weatherValue p {
-  font-size: var(--fg-secondary);
-  font-weight: bolder;
-  margin-left: 15px;
-  color: var(--fg);
-}
-
-.weatherDescription p {
-  font-size: var(--fg-secondary);
-  margin-left: 15px;
-  color: var(--fg);
-}
-
-.reduceGap {
-  grid-gap: 2rem !important;
-}
-
-.removeGap {
-  grid-gap: 0 !important;
-}
-
-.linksBlock {
-  grid-row: 3 / span 2;
-  grid-column: 1 / span 4;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  grid-gap: 1.5rem;
-}
-
-.linksBlockLeft {
-  grid-row: 1 / span 2;
-  grid-column: 1 / span 2;
-}
-
-.linksBlockRight {
-  grid-row: 1 / span 2;
-  grid-column: 3 / span 2;
-}
-
-.buttonsContainer {
-  width: 100%;
-  height: 100%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  grid-gap: 30px;
-  padding: 20px;
-}
-
-.button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
-.buttonIcon {
-  width: var(--icon);
-  height: var(--icon);
-  color: var(--fg);
-}
-
-.button__1 {
-  grid-row: 1;
-  grid-column: 1;
-}
-.button__2 {
-  grid-row: 1;
-  grid-column: 2;
-}
-.button__3 {
-  grid-row: 2;
-  grid-column: 1;
-}
-.button__4 {
-  grid-row: 2;
-  grid-column: 2;
-}
-.button__5 {
-  grid-row: 1;
-  grid-column: 3;
-}
-.button__6 {
-  grid-row: 2;
-  grid-column: 3;
-}
-.button:hover {
-  background-color: var(--accent);
-}
-.button:hover svg {
-  stroke: var(--sfg);
-}
-
-.listsContainer {
-  width: 100%;
-  height: 100%;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  grid-gap: 3rem;
-  padding: 0.4rem;
-}
-
-.list {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.list__1 {
-  grid-column: 1;
-  grid-row: 1 / span 2;
-}
-.list__2 {
-  grid-column: 2;
-  grid-row: 1 / span 2;
-}
-.listIcon {
-  /* margin-top: 3vh; */
-  margin-bottom: 2vh;
-  color: var(--fg);
-  width: var(--icon);
-  height: var(--icon);
-}
-.listItem {
-  text-decoration: none;
-  font-size: var(--fg-list);
-  color: var(--fg);
-  margin-top: 1vh;
-  padding: 8px 12px;
-  border-radius: 5px;
-  font-weight: bold;
-  text-align: center;
-  width: 80%;
-}
-.listItem:hover {
-  background-color: var(--accent);
-  color: var(--sfg);
-}
-
-/* M E D I A - Q U E R I E S */
-
-@media only screen and (max-width: 68.75em) {
-  .container {
-    grid-gap: 20px;
-    padding: 40px;
-  }
-
-  .timeBlock {
-    grid-row: 1 / span 2;
-    grid-column: 1 / span 4;
-  }
-
-  .weatherBlock {
-    display: none;
-  }
-
-  #greetings {
-    font-size: var(--fg-secondary);
-  }
-
-  .linksBlockRight {
-    display: none;
-  }
-
-  .linksBlockLeft {
-    grid-column: 1 / span 4;
-  }
-
-  .button {
-    grid-gap: 3vw;
-    padding-left: 100px;
-    padding-right: 100px;
-  }
-}
+	// Second Links Container
+	secondListsContainer: [
+		{
+			icon: 'trophy',
+			id: '1',
+			links: [
+				{
+					name: 'MLB Bite',
+					link: 'https://mlbbite.net/',
+				},
+				{
+					name: 'NFL Bite',
+					link: 'https://reddit1.nflbite.com/',
+				},
+				{
+					name: 'NBA Bite',
+					link: 'https://v2.nbabite.ai/live2',
+				},
+				{
+					name: 'NHL Bite',
+					link: 'https://reddit.nhlbite.com/',
+				},
+			],
+		},
+		{
+			icon: 'arrow-big-down-dash',
+			id: '2',
+			links: [
+				{
+					name: 'qBT',
+					link: 'http://192.168.4.185:1791/',
+				},
+				{
+					name: 'BTN',
+					link: 'https://broadcasthe.net/',
+				},
+				{
+					name: 'PTP',
+					link: 'https://passthepopcorn.me/',
+				},
+				{
+					name: 'GGn',
+					link: 'https://gazellegames.net/index.php',
+				},
+			],
+		},
+	],
+};
