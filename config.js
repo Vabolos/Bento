@@ -26,14 +26,14 @@ const CONFIG = {
 	bentoLayout: 'lists', // 'bento', 'lists', 'buttons'
 
 	// Weather
-	weatherKey: '69fde5a4383272f5c5b218021a150dcc', // Write here your API Key
+	weatherKey: 'dfb0b5761b4c9afd1659fb7316357be8', // Write here your API Key
 	weatherIcons: 'OneDark', // 'Onedark', 'Nord', 'Dark', 'White'
 	weatherUnit: 'F', // 'F', 'C'
 	language: 'en', // More languages in https://openweathermap.org/current#multi
 
 	trackLocation: false, // If false or an error occurs, the app will use the lat/lon below
-	defaultLatitude: '40.039398',
-	defaultLongitude: '-76.307083',
+	defaultLatitude: '51.504221',
+	defaultLongitude: '5.369565',
 
 	// Autochange
 	autoChangeTheme: true,
