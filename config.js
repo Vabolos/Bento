@@ -65,9 +65,9 @@ const CONFIG = {
 		},
 		{
 			id: '3',
-			name: 'Todoist',
-			icon: 'trello',
-			link: 'https://todoist.com',
+			name: 'Generator',
+			icon: 'tree',
+			link: 'https://woochanleee.github.io/project-tree-generator/',
 		},
 		{
 			id: '4',
