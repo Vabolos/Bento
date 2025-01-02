@@ -53,39 +53,39 @@ const CONFIG = {
 	firstButtonsContainer: [
 		{
 			id: '1',
-			name: 'Gmail',
-			icon: 'mail',
-			link: 'https://mail.google.com/mail/u/0/#inbox',
+			name: 'Github',
+			icon: 'github',
+			link: 'https://github.com/',
 		},
 		{
 			id: '2',
-			name: 'Keep',
-			icon: 'list-todo',
-			link: 'https://keep.google.com/u/1/',
+			name: 'Mail',
+			icon: 'mail',
+			link: 'https://mail.protonmail.com/',
 		},
 		{
 			id: '3',
-			name: 'Indeed',
-			icon: 'glasses',
-			link: 'https://www.indeed.com/',
+			name: 'Todoist',
+			icon: 'trello',
+			link: 'https://todoist.com',
 		},
 		{
 			id: '4',
-			name: 'ESPN',
-			icon: 'trophy',
-			link: 'https://www.espn.com/',
+			name: 'Calendar',
+			icon: 'calendar',
+			link: 'https://calendar.google.com/calendar/r',
 		},
 		{
 			id: '5',
-			name: 'SoFi',
-			icon: 'piggy-bank',
-			link: 'https://www.sofi.com/',
+			name: 'Reddit',
+			icon: 'glasses',
+			link: 'https://reddit.com',
 		},
 		{
 			id: '6',
-			name: 'YouTube',
+			name: 'Youtube',
 			icon: 'youtube',
-			link: 'https://www.youtube.com',
+			link: 'https://youtube.com/',
 		},
 	],
 
@@ -135,46 +135,46 @@ const CONFIG = {
 	// First Links Container
 	firstlistsContainer: [
 		{
-			icon: 'dices',
+			icon: 'music',
 			id: '1',
 			links: [
 				{
-					name: 'PokeDoku',
-					link: 'https://pokedoku.com/',
+					name: 'Inspirational',
+					link: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
 				},
 				{
-					name: 'Daily Dozen',
-					link: 'https://dailydozentrivia.com/',
+					name: 'Classic',
+					link: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
 				},
 				{
-					name: 'Connections',
-					link: 'https://www.nytimes.com/games/connections',
+					name: 'Oldies',
+					link: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
 				},
 				{
-					name: 'Crossword',
-					link: 'https://www.washingtonpost.com/crossword-puzzles/daily/',
+					name: 'Rock',
+					link: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
 				},
 			],
 		},
 		{
-			icon: 'cake-slice',
+			icon: 'coffee',
 			id: '2',
 			links: [
 				{
-					name: 'Reddit',
-					link: 'https://www.reddit.com/',
+					name: 'Linkedin',
+					link: 'https://www.linkedin.com',
 				},
 				{
-					name: 'Lemmy',
-					link: 'https://lemm.ee/',
+					name: 'Dribbble',
+					link: 'https://www.dribbble.com',
 				},
 				{
-					name: 'Bluesky',
-					link: 'https://bsky.app/',
+					name: 'Trello',
+					link: 'https://www.trello.com',
 				},
 				{
-					name: 'GolfWRX',
-					link: 'https://forums.golfwrx.com/forum/12-equipment/?_fromLogin=1',
+					name: 'Slack',
+					link: 'https://www.slack.com',
 				},
 			],
 		},
@@ -183,46 +183,46 @@ const CONFIG = {
 	// Second Links Container
 	secondListsContainer: [
 		{
-			icon: 'trophy',
+			icon: 'binary',
 			id: '1',
 			links: [
 				{
-					name: 'MLB Bite',
-					link: 'https://mlbbite.net/',
+					name: 'Spotify',
+					link: 'https://www.spotify.com',
 				},
 				{
-					name: 'NFL Bite',
-					link: 'https://reddit1.nflbite.com/',
+					name: 'Reddit',
+					link: 'https://www.reddit.com',
 				},
 				{
-					name: 'NBA Bite',
-					link: 'https://v2.nbabite.ai/live2',
+					name: 'Hashnode',
+					link: 'https://www.hashnode.com',
 				},
 				{
-					name: 'NHL Bite',
-					link: 'https://reddit.nhlbite.com/',
+					name: 'Pocket',
+					link: 'https://www.pocket.com',
 				},
 			],
 		},
 		{
-			icon: 'arrow-big-down-dash',
+			icon: 'github',
 			id: '2',
 			links: [
 				{
-					name: 'qBT',
-					link: 'http://192.168.4.185:1791/',
+					name: 'Front',
+					link: 'https://www.reddit.com/r/Frontend/',
 				},
 				{
-					name: 'BTN',
-					link: 'https://broadcasthe.net/',
+					name: 'Rust',
+					link: 'https://www.reddit.com/r/rust/',
 				},
 				{
-					name: 'PTP',
-					link: 'https://passthepopcorn.me/',
+					name: 'Go',
+					link: 'https://www.reddit.com/r/golang/',
 				},
 				{
-					name: 'GGn',
-					link: 'https://gazellegames.net/index.php',
+					name: 'Repos',
+					link: 'https://github.com/Vabolos',
 				},
 			],
 		},
