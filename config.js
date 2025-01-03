@@ -173,8 +173,8 @@ const CONFIG = {
 					link: 'https://www.linkedin.com',
 				},
 				{
-					name: 'Slack',
-					link: 'https://www.slack.com',
+					name: 'Daily dev',
+					link: 'https://app.daily.dev/',
 				},
 			],
 		},
