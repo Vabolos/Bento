@@ -161,16 +161,16 @@ const CONFIG = {
 			id: '2',
 			links: [
 				{
+					name: 'Google',
+					link: 'https://www.google.com',
+				},
+				{
+					name: 'Monkeytype',
+					link: 'https://monkeytype.com/',
+				},
+				{
 					name: 'Linkedin',
 					link: 'https://www.linkedin.com',
-				},
-				{
-					name: 'Dribbble',
-					link: 'https://www.dribbble.com',
-				},
-				{
-					name: 'Trello',
-					link: 'https://www.trello.com',
 				},
 				{
 					name: 'Slack',
